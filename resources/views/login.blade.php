@@ -80,7 +80,7 @@
         </div>
     </section>
 
-    <script src="{{URL::asset('/public/js/jquery.min.js')}}"></script>
+    <!-- <script src="{{URL::asset('/public/js/jquery.min.js')}}"></script> -->
     <script src="{{url('/public/js/popper.js')}}"></script>
     <script src="{{url('/public/js/bootstrap.min.js')}}"></script>
     <script src="{{url('/public/js/main.js')}}"></script>
