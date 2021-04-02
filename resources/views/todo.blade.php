@@ -139,6 +139,20 @@
         border: none;
     }
 
+    .addBtn1 {
+        padding: 10px;
+        width: 10%;
+        background: #d9d9d9;
+        color: #555;
+        float: left;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 0;
+        border: none;
+    }
+
     i.fa.fa-close {
         float: right;
         margin-right: 30px;
@@ -147,13 +161,24 @@
     .addBtn:hover {
         background-color: #bbb;
     }
+
+    .img_1 {
+        height: 55px;
+        width: 55px;
+        float: right;
+        border-radius: 30px;
+    }
     </style>
 </head>
 
 <body>
     <div id="myDIV" class="header">
+        <button type="submit" class="addBtn1" onclick="logout()">Logout</button>
+        <img class="img_1" src="{{ URL::to('/') }}/UserImages/<?php echo $_SESSION['image']?>">
         <h2 style="margin:5px">My To Do List</h2>
-        <form method="POST" action='inserttodo'>
+        <form method="POST" action="inserttodo" style="
+    margin-top: 30px;
+">
             <input type="text" id="myInput" placeholder="Title..." name="name">
             <button type="submit" class="addBtn">Add</button>
         </form>
@@ -205,6 +230,24 @@
 
 
     <script>
+    function logout() {
+
+        axios.post('logout', {
+
+
+
+            })
+            .then((res) => {
+
+                window.location = "/";
+
+
+            }).catch((err) => {
+                console.log(err);
+            })
+    }
+
+
     function update_data(id, value) {
 
         var n = document.getElementById(value).value;

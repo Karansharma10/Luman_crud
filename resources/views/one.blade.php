@@ -1,26 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{{ URL::to('/') }}/css/style.css">
+
+
 </head>
 
 <body>
-    <form action="http://127.0.0.1:8000/adduser" method="POST">
+    <section class=" ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section"></h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-12 col-lg-10">
+                    <div class="wrap d-md-flex">
+                        <div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
+                            <div class="text w-100">
+                                <h2>Welcome to Sign Up</h2>
 
-        <input type='text' name='name' id="name">
-        <input type='email' name='email' id="email">
-        <button type="submit">Submit</button>
-    </form>
+                                <a href="/" class="btn btn-white btn-outline-white">Sign In</a>
+                            </div>
+                        </div>
 
-    <p><a href='show'>Show Data</a></p>
-    </p>
+                        <div class="login-wrap p-4 p-lg-5">
+                            <div class="d-flex">
+                                <div class="w-100">
+                                    <h3 class="mb-4">Sign Up</h3>
+                                </div>
+                                <div class="w-100">
+                                    <p class="social-media d-flex justify-content-end">
+                                        <a href="#"
+                                            class="social-icon d-flex align-items-center justify-content-center"><span
+                                                class="fa fa-facebook"></span></a>
+                                        <a href="#"
+                                            class="social-icon d-flex align-items-center justify-content-center"><span
+                                                class="fa fa-twitter"></span></a>
+                                    </p>
+                                </div>
+                            </div>
+                            <form action="adduser" class="signin-form" method="POST" enctype="multipart/form-data">
+                                <div class="form-group mb-3">
+                                    <label class="label" for="name">Username</label>
+                                    <input type="text" class="form-control" name="name" placeholder="Username" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="label" for="password">Password</label>
+                                    <input type="password" class="form-control" name="password" placeholder="Password"
+                                        required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="label" for="password">Email</label>
+                                    <input type="email" class="form-control" name="email" placeholder="Password"
+                                        required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="label">Image</label>
+                                    <input type="file" class="form-control" name="image" required>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="form-control btn btn-primary submit px-3">Sign
+                                        In</button>
+                                </div>
+                                <div class="form-group d-md-flex">
+                                    <div class="w-50 text-left">
+                                        <!-- <label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+                                            <input type="checkbox" checked>
+                                            <span class="checkmark"></span>
+                                        </label> -->
+                                    </div>
+                                    <!-- <div class="w-50 text-md-right">
+                                        <a href="#">Forgot Password</a>
+                                    </div> -->
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{{URL::asset('/public/js/jquery.min.js')}}"></script>
+    <script src="{{url('/public/js/popper.js')}}"></script>
+    <script src="{{url('/public/js/bootstrap.min.js')}}"></script>
+    <script src="{{url('/public/js/main.js')}}"></script>
+
 </body>
-
-
-
 
 </html>

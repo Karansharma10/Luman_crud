@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\todo1;
-
+// session_start();
 class todo extends Controller
 {
 
     function index(){
 
         
-        $data =  todo1::all();
+        $data =  todo1::where('user_id',$_COOKIE['id'])->get();
 
         return view('todo',['data' => $data]);
       
@@ -22,7 +22,7 @@ class todo extends Controller
 
         $data2 = new todo1();
         $data2->name =  $request->input('name');
-     
+        $data2->user_id = $_COOKIE['id'];
         $data2->save();
 
         $this->index();
